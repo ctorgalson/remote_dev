@@ -1,0 +1,54 @@
+[submodule "roles/ansible-role-apt"]
+	path = roles/ansible-role-apt
+	url = https://github.com/ctorgalson/ansible-role-apt
+[submodule "roles/ansible-role-dotfiles"]
+	path = roles/ansible-role-dotfiles
+	url = https://github.com/ctorgalson/ansible-role-dotfiles
+[submodule "roles/ansible-role-files"]
+	path = roles/ansible-role-files
+	url = https://github.com/ctorgalson/ansible-role-files
+[submodule "roles/ansible-role-nvm"]
+	path = roles/ansible-role-nvm
+	url = https://github.com/ctorgalson/ansible-role-nvm
+[submodule "roles/ansible-role-oh-my-zsh"]
+	path = roles/ansible-role-oh-my-zsh
+	url = https://github.com/ctorgalson/ansible-role-oh-my-zsh
+[submodule "roles/ansible-role-ssh-keys"]
+	path = roles/ansible-role-ssh-keys
+	url = https://github.com/ctorgalson/ansible-role-ssh-keys
+[submodule "roles/ansible-role-vim"]
+	path = roles/ansible-role-vim
+	url = https://github.com/ctorgalson/ansible-role-vim
+[submodule "roles/ansible-role-composer"]
+	path = roles/ansible-role-composer
+	url = https://github.com/geerlingguy/ansible-role-composer
+[submodule "roles/ansible-role-docker"]
+	path = roles/ansible-role-docker
+	url = https://github.com/geerlingguy/ansible-role-docker
+[submodule "roles/ansible-role-firewall"]
+	path = roles/ansible-role-firewall
+	url = https://github.com/geerlingguy/ansible-role-firewall
+[submodule "roles/ansible-role-nodejs"]
+	path = roles/ansible-role-nodejs
+	url = https://github.com/geerlingguy/ansible-role-nodejs
+[submodule "roles/ansible-role-pip"]
+	path = roles/ansible-role-pip
+	url = https://github.com/geerlingguy/ansible-role-pip
+[submodule "roles/ansible-role-php"]
+	path = roles/ansible-role-php
+	url = https://github.com/geerlingguy/ansible-role-php
+[submodule "roles/ansible-role-security"]
+	path = roles/ansible-role-security
+	url = https://github.com/geerlingguy/ansible-role-security
+[submodule "roles/ansible-users"]
+	path = roles/ansible-users
+	url = https://github.com/weareinteractive/ansible-users
+[submodule "roles/ansible-environment"]
+	path = roles/ansible-environment
+	url = https://github.com/weareinteractive/ansible-environment
+[submodule "roles/ansible-role-yarn"]
+	path = roles/ansible-role-yarn
+	url = https://github.com/ocha/ansible-role-yarn
+[submodule "roles/ansible-nerdfonts"]
+	path = roles/ansible-nerdfonts
+	url = https://github.com/hurricanehrndz/ansible-nerdfonts
