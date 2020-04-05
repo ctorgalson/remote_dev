@@ -2,9 +2,8 @@
 dependency:
   name: galaxy
 lint: |
-  yamllint ./
-  flake8 ./plugins/modules/ ./molecule/default/tests/
-  ansible-lint -q ./molecule/default/ ./playbooks/
+  set -e
+  ./scripts/lint.sh
 driver:
   name: docker
 platforms:
