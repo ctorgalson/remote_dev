@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include remote_dev"
+      include_role:
+        name: "remote_dev"
