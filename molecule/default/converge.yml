@@ -1,7 +1,23 @@
 ---
 - name: Converge
   hosts: all
+
+  collections:
+    - ctorgalson.remote_dev
+
   tasks:
-    - name: "Include remote_dev"
-      include_role:
-        name: "remote_dev"
+    - name: Test the docksal_test module.
+      docksal_test:
+        name: 'hello'
+        new: true
+      register: testout
+
+    - name: Debug the docksal_test module's output
+      debug:
+        msg: '{{ testout }}'
+
+    - name: Validate the my_test module's output
+      assert:
+        that:
+          - testout.original_message == 'hello'
+          - testout.message == 'goodbye'
