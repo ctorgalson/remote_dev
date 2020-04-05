@@ -2,13 +2,15 @@
 dependency:
   name: galaxy
 lint: |
-  set -e
   ./scripts/lint.sh
+env:
+  ANSIBLE_COLLECTIONS_PATHS: "../ctorgalson"
 driver:
   name: docker
 platforms:
   - name: instance
-    image: docker.io/pycontribs/centos:7
+    image: geerlingguy/docker-ubuntu1804-ansible:latest
+    privileged: true
     pre_build_image: true
 provisioner:
   name: ansible
