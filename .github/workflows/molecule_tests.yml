@@ -8,31 +8,43 @@ jobs:
       matrix:
         python-version: [3.5, 3.6, 3.7]
 
+    env:
+      COLLECTION_NAMESPACE: ctorgalson
+      COLLECTION_NAME: remote_dev
+
     steps:
       - uses: actions/checkout@v1
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
         with:
           python-version: ${{ matrix.python-version }}
+
       - name: Debug environment.
         run: |
           whoami
           echo $HOME
           pwd
           ls -hal ~
-#       - name: Install dependencies
-#         run: |
-#           ls -hal
-#           # sudo apt install docker
-#           sudo apt update
-#           sudo apt install apt-transport-https ca-certificates curl software-properties-common
-#           curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-#           sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-#           sudo apt update
-#           apt-cache policy docker-ce
-#           sudo apt install docker-ce
-#           python3 -m pip install --upgrade pip
-#           ./ci/scripts/python-dependencies.sh
-#       - name: Test with molecule
-#         run: |
-#           molecule test --all
+
+      - name: Install dependencies.
+        run: |
+          sudo apt update
+          sudo apt install apt-transport-https ca-certificates curl software-properties-common
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+          sudo apt update
+          apt-cache policy docker-ce
+          sudo apt install docker-ce
+          python3 -m pip install --upgrade pip
+          sudo ./scripts/install-python-dependencies.sh
+
+      - name: Reorganize file system.
+        run: |
+          cd ~
+          mkdir -p ~/ansible_collections/$COLLECTION_NAMESPACE
+          mv ~/work/$COLLECTION_NAME/$COLLECTION_NAME ~/ansible_collections/$COLLECTION_NAMESPACE/$COLLECTION_NAME
+          cd ~/ansible_collections/$COLLECTION_NAMESPACE/$COLLECTION_NAME
+
+      - name: Test with molecule.
+        run: |
+          molecule test
