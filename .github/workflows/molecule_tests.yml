@@ -47,5 +47,4 @@ jobs:
           mkdir -p ~/ansible_collections/$COLLECTION_NAMESPACE
           mv ~/work/$COLLECTION_NAME/$COLLECTION_NAME ~/ansible_collections/$COLLECTION_NAMESPACE/$COLLECTION_NAME
           cd ~/ansible_collections/$COLLECTION_NAMESPACE/$COLLECTION_NAME
-          ls -hal .
           molecule --debug test
