@@ -6,18 +6,9 @@
     - ctorgalson.remote_dev
 
   tasks:
-    - name: Test the docksal_test module.
-      docksal_test:
-        name: 'hello'
-        new: true
-      register: testout
-
-    - name: Debug the docksal_test module's output
-      debug:
-        msg: '{{ testout }}'
-
-    - name: Validate the my_test module's output
-      assert:
-        that:
-          - testout.original_message == 'hello'
-          - testout.message == 'goodbye'
+    - name: Install required packages.
+      import_role:
+        name: "ansible-role-apt"
+      vars:
+        apt_packages:
+          - "vim"
