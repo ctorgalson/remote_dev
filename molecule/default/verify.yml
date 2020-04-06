@@ -9,3 +9,4 @@
       that: true
   - name: Fake command.
     command: "ls -hal"
+    changed_when: false
