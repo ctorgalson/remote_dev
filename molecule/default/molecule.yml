@@ -1,8 +1,8 @@
 ---
 dependency:
   name: galaxy
-# lint: |
-#   ./scripts/lint.sh
+lint: |
+  ./scripts/lint.sh
 env:
   ANSIBLE_COLLECTIONS_PATHS: "../ctorgalson:/home/runner/ansible_collections/ctorgalson"
 driver:
