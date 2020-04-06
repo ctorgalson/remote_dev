@@ -9,6 +9,7 @@ jobs:
         python-version: [3.5, 3.6, 3.7]
 
     env:
+      ANSIBLE_COLLECTIONS_PATHS: /home/runner/ansible_collections/ctorgalson
       COLLECTION_NAMESPACE: ctorgalson
       COLLECTION_NAME: remote_dev
 
