@@ -34,7 +34,7 @@ jobs:
           sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
           sudo apt update
           apt-cache policy docker-ce
-          sudo apt install docker-ce
+          sudo apt install docker-ce python3-setuptools
           python3 -m pip install --upgrade pip
           sudo ./scripts/install-python-dependencies.sh
 
