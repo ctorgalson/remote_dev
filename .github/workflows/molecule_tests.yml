@@ -39,6 +39,9 @@ jobs:
           python3 -m pip install --upgrade pip
           sudo ./scripts/install-python-dependencies.sh
 
+      - name: Checkout submodules.
+        uses: textbook/git-checkout-submodule-action@master
+
       # It's simpler to run tests during the file system reorg step since the
       # next step otherwise attempts to begin at the *original* location of the
       # repository only to find it's not there.
