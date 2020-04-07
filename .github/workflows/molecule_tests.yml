@@ -42,13 +42,13 @@ jobs:
       - name: Checkout submodules.
         uses: textbook/git-checkout-submodule-action@master
 
-      # It's simpler to run tests during the file system reorg step since the
-      # next step otherwise attempts to begin at the *original* location of the
-      # repository only to find it's not there.
-      - name: Reorganize file system and run tests.
+      - name: Reorganize file system in preparation for test-running.
         run: |
-          cd ~
           mkdir -p ~/ansible_collections/$COLLECTION_NAMESPACE
-          mv ~/work/$COLLECTION_NAME/$COLLECTION_NAME ~/ansible_collections/$COLLECTION_NAMESPACE/$COLLECTION_NAME
-          cd ~/ansible_collections/$COLLECTION_NAMESPACE/$COLLECTION_NAME
+          ln -sf ~/work/$COLLECTION_NAME/$COLLECTION_NAME ~/ansible_collections/$COLLECTION_NAMESPACE/$COLLECTION_NAME
+
+      - name: Test!
+        run: |
+          echo $ANSIBLE_COLLECTIONS_PATH
+          ls -hal "$ANSIBLE_COLLECTIONS_PATH"
           molecule --debug test
