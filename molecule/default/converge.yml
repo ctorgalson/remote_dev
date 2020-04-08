@@ -6,9 +6,7 @@
     - ctorgalson.remote_dev
 
   tasks:
+    # Vars in group_vars/all/ansible-role-apt.yml.
     - name: Install required packages.
       import_role:
         name: "ansible-role-apt"
-      vars:
-        apt_packages:
-          - "vim"
