@@ -2,7 +2,7 @@
 dependency:
   name: galaxy
 lint: |
-  pwd
+  pwd && ls -hal
   ./scripts/lint.sh
 env:
   ANSIBLE_COLLECTIONS_PATHS: "../ctorgalson:/home/runner/ansible_collections/ctorgalson"
