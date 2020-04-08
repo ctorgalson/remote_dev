@@ -45,7 +45,7 @@ jobs:
       - name: Reorganize file system in preparation for test-running.
         run: |
           mkdir -p /home/runner/.ansible/collections/ansible_collections/$COLLECTION_NAMESPACE
-          ln -sf /home/runner/work/$COLLECTION_NAME/$COLLECTION_NAME /home/runner/ansible_collections/$COLLECTION_NAMESPACE/$COLLECTION_NAME
+          ln -sf /home/runner/work/$COLLECTION_NAME/$COLLECTION_NAME /home/runner/.ansible/collections/ansible_collections/$COLLECTION_NAMESPACE/$COLLECTION_NAME
 
       - name: Test!
         run: |
