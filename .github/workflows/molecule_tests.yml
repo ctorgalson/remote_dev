@@ -38,6 +38,7 @@ jobs:
 
       - name: Lint!
         run: |
+          command -v bash
           ./scripts/lint.sh
 
       - name: Test!
