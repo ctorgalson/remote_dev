@@ -1,0 +1,12 @@
+---
+# ansible-role-apt (ctorgalson.apt) vars.
+
+apt_packages:
+  - name: "byobu"
+  - name: "git"
+  - name: "htop"
+  - name: "httpie"
+  - name: "neofetch"
+  - name: "openssh-server"
+  - name: "unzip"
+  - name: "zsh"
