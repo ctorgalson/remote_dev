@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 # Used to set up a virtualenv environment for local development. Encapsulated
 # in script to avoid Github Dependabot warnings about expired package versions
