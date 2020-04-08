@@ -11,7 +11,7 @@ jobs:
     env:
       COLLECTION_NAMESPACE: ctorgalson
       COLLECTION_NAME: remote_dev
-      ANSIBLE_COLLECTIONS_PATHS: /home/ctorgalson/.ansible/collections
+      ANSIBLE_COLLECTIONS_PATHS: /home/runner/.ansible/collections
 
     steps:
       - name: Checkout project repo.
