@@ -36,6 +36,10 @@ jobs:
           mkdir -p ~/.ansible/collections/ansible_collections/"$COLLECTION_NAMESPACE"/"$COLLECTION_NAME"
           cp -r ./ ~/.ansible/collections/ansible_collections/"$COLLECTION_NAMESPACE"/"$COLLECTION_NAME"
 
+      - name: Lint!
+        run: |
+          ./scripts/lint.sh
+
       - name: Test!
         run: |
           molecule --debug test
