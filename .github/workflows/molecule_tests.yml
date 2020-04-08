@@ -38,8 +38,6 @@ jobs:
         run: |
           mkdir -p ~/.ansible/collections/ansible_collections/"$COLLECTION_NAMESPACE"/"$COLLECTION_NAME"
           cp -r ./ ~/.ansible/collections/ansible_collections/"$COLLECTION_NAMESPACE"/"$COLLECTION_NAME"
-          mkdir -p "$ANSIBLE_COLLECTIONS_PATHS"
-          ln -sf /home/runner/work/$COLLECTION_NAME/"$COLLECTION_NAME" "$ANSIBLE_COLLECTIONS_PATHS"
 
       - name: Test!
         run: |
