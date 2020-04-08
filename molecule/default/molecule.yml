@@ -1,8 +1,10 @@
 ---
 dependency:
-  lint: |
-    ./scripts/lint.sh
   name: galaxy
+lint: |
+  ./scripts/lint.sh
+env:
+  ANSIBLE_COLLECTIONS_PATHS: "~/.ansible/collections"
 driver:
   name: docker
 platforms:
