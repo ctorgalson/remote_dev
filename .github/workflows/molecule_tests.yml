@@ -34,8 +34,8 @@ jobs:
 
       - name: Reorganize file system in preparation for test-running.
         run: |
-          mkdir -p "$COLLECTION_BASE_DIR"/"$COLLECTION_NAMESPACE"/"$COLLECTION_NAME"
-          cp -r ./ "$COLLECTION_BASE_DIR"/"$COLLECTION_NAMESPACE"/"$COLLECTION_NAME"
+          mkdir -p "$ANSIBLE_COLLECTIONS_PATHS"/ansible_collections/"$COLLECTION_NAMESPACE"/"$COLLECTION_NAME"
+          cp -r ./ "$ANSIBLE_COLLECTIONS_PATHS"/ansible_collections/"$COLLECTION_NAMESPACE"/"$COLLECTION_NAME"
 
       - name: Test!
         run: |
