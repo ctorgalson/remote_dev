@@ -1,0 +1,14 @@
+---
+- name: Converge
+  hosts: all
+
+  collections:
+    - ctorgalson.remote_dev
+
+  tasks:
+    - name: Install required packages.
+      import_role:
+        name: "ansible-role-apt"
+      vars:
+        apt_packages:
+          - "vim"

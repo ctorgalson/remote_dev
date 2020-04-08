@@ -1,0 +1,41 @@
+name: Molecule Test
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-18.04
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.7]
+
+    env:
+      COLLECTION_NAMESPACE: ctorgalson
+      COLLECTION_NAME: remote_dev
+
+    steps:
+      - name: Checkout project repo.
+        uses: actions/checkout@v1
+
+      - name: Checkout submodules.
+        uses: textbook/git-checkout-submodule-action@master
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies.
+        run: |
+          sudo apt-get update -yqq
+          sudo apt-get install python3-setuptools -yqq
+          python -m pip install --upgrade pip
+          sudo ./scripts/install-python-dependencies.sh
+
+      - name: Reorganize file system in preparation for test-running.
+        run: |
+          mkdir -p ~/.ansible/collections/ansible_collections/"$COLLECTION_NAMESPACE"/"$COLLECTION_NAME"
+          cp -r ./ ~/.ansible/collections/ansible_collections/"$COLLECTION_NAMESPACE"/"$COLLECTION_NAME"
+
+      - name: Test!
+        run: |
+          molecule test

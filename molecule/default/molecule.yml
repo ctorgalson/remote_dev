@@ -1,0 +1,18 @@
+---
+dependency:
+  name: galaxy
+lint: |
+  pwd && ls -hal
+env:
+  ANSIBLE_COLLECTIONS_PATHS: "../ctorgalson:/home/runner/ansible_collections/ctorgalson"
+driver:
+  name: docker
+platforms:
+  - name: instance
+    image: geerlingguy/docker-ubuntu1804-ansible:latest
+    privileged: true
+    pre_build_image: true
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
