@@ -1,0 +1,12 @@
+---
+# ansible-role-files (ctorgalson.files) vars.
+
+files_files:
+  - path: "/home/{{ rdev_user }}/{{ rdev_projects_directory }}"
+    owner: "{{ rdev_user }}"
+    group: "{{ rdev_user }}"
+    state: "directory"
+  - path: "/home/{{ rdev_user }}/{{ rdev_projects_directory }}/Client"
+    owner: "{{ rdev_user }}"
+    group: "{{ rdev_user }}"
+    state: "directory"

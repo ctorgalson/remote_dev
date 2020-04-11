@@ -2,3 +2,4 @@
 # Common vars.
 
 rdev_user: "molecule"
+rdev_projects_directory: "Projects"
