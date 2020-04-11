@@ -53,5 +53,5 @@
 	path = roles/ansible-nerdfonts
 	url = https://github.com/hurricanehrndz/ansible-nerdfonts
 [submodule "hostname"]
-	path = hostname
+	path = roles/hostname
 	url = https://github.com/ANXS/hostname.git
