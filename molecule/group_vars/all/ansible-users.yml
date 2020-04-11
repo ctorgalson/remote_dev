@@ -1,0 +1,13 @@
+---
+# ansible-users (weareinteractive.users) vars.
+
+# Notes:
+#  - uid and gid must be 1000 for Docker.
+#  - ssh keys managed in ansible-role-ssh_keys to keep them out of Ansible's
+#    output.
+users:
+  - username: "{{ rdev_user }}"
+    append: true
+    gid: "1000"
+    shell: "/usr/bin/zsh"
+    uid: "1000"
