@@ -1,1 +1,3 @@
 .venv
+*.log
+tests/*/__pycache__
