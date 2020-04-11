@@ -42,3 +42,8 @@
     - name: Set up basic system security.
       import_role:
         name: "ansible-role-security"
+
+    # Vars in group_vars/all/ansible-role-firewall.yml.
+    - name: Set up system firewall.
+      import_role:
+        name: "ansible-role-firewall"
