@@ -24,8 +24,9 @@
         name: "ansible-users"
 
     # Vars in group_vars/all/ansible-role-vim.yml.
-
-    # Vars in group_vars/all/ansible-nerdfonts.yml.
+    - name: Set up Vim and its plugins.
+      import_role:
+        name: "ansible-role-vim"
 
     # Vars in group_vars/all/ansible-role-oh-my-zsh.yml.
 
