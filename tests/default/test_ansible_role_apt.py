@@ -20,6 +20,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     'neofetch',
     'openssh-server',
     'unzip',
+    'vim',
     'zsh',
 ])
 def test_packages(host, package):

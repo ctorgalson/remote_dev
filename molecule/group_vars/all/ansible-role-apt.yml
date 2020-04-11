@@ -12,4 +12,5 @@ apt_packages:
   - name: "neofetch"
   - name: "openssh-server"
   - name: "unzip"
+  - name: "vim"
   - name: "zsh"
