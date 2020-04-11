@@ -20,3 +20,8 @@
     - name: Set up required users.
       import_role:
         name: "ansible-users"
+
+    # Vars in group_vars/all/ansible-role-ssh-keys.yml.
+    - name: Set up user ssh keys.
+      import_role:
+        name: "ansible-role-ssh-keys"
