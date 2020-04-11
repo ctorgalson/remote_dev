@@ -1,0 +1,7 @@
+---
+# ansible-role-security (geerlingguy.security) vars.
+
+security_sudoers_passwordless:
+  - "{{ rdev_user }}"
+security_autoupdate_enabled: true
+security_fail2ban_enabled: false

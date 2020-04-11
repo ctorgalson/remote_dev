@@ -21,6 +21,8 @@
       import_role:
         name: "ansible-users"
 
+    # Vars in group_vars/all/ansible-role-oh-my-zsh.yml.
+
     # Vars in group_vars/all/ansible-role-ssh-keys.yml.
     - name: Set up user ssh keys.
       import_role:
@@ -35,3 +37,8 @@
     - name: Set up file structure in user home directory.
       import_role:
         name: "ansible-role-files"
+
+    # Vars in group_vars/all/ansible-role-security.yml.
+    - name: Set up basic system security.
+      import_role:
+        name: "ansible-role-security"
