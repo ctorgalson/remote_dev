@@ -1,0 +1,5 @@
+---
+# ansible-environment (weareinteractive.environment) vars.
+
+environment_config:
+  LC_ALL: "en_US.UTF-8"
