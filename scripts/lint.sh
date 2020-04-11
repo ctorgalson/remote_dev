@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 # This script is used in CI and by molecule to lint the project.
 #
@@ -15,7 +15,7 @@
 # - From the project root, run "molecule lint" (the script will also be run
 #   automatically in "molecule test").
 
-set +e
+set +ex
 
 echo ''
 
