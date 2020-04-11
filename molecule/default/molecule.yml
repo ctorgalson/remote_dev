@@ -3,8 +3,6 @@ dependency:
   name: galaxy
 lint: |
   ./scripts/lint.sh
-env:
-  ANSIBLE_COLLECTIONS_PATHS: "../ctorgalson:/home/runner/ansible_collections/ctorgalson"
 driver:
   name: docker
 platforms:
@@ -14,5 +12,11 @@ platforms:
     pre_build_image: true
 provisioner:
   name: ansible
+  inventory:
+    links:
+      group_vars: ../group_vars
+  env:
+    ANSIBLE_COLLECTIONS_PATHS: "~/.ansible/collections"
 verifier:
-  name: ansible
+  name: testinfra
+  directory: ../../tests/default
