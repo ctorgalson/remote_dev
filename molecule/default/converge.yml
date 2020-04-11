@@ -11,24 +11,32 @@
       import_role:
         name: "ansible-environment"
 
+    # Time zone.
+
     # Vars in group_vars/all/ansible-role-apt.yml.
-    - name: Install required packages.
+    - name: Install required apt packages.
       import_role:
         name: "ansible-role-apt"
 
     # Vars in group_vars/all/ansible-role-pip.yml.
+    - name: Install required pip packages.
+      import_role:
+        name: "ansible-role-pip"
 
     # Vars in group_vars/all/ansible-users.yml.
     - name: Set up required users.
       import_role:
         name: "ansible-users"
 
+    # Vars in group_vars/all/ansible-role-oh-my-zsh.yml.
+    - name: Set up zsh and oh-my-zsh for user.
+      import_role:
+        name: "ansible-role-oh-my-zsh"
+
     # Vars in group_vars/all/ansible-role-vim.yml.
     - name: Set up Vim and its plugins.
       import_role:
         name: "ansible-role-vim"
-
-    # Vars in group_vars/all/ansible-role-oh-my-zsh.yml.
 
     # Vars in group_vars/all/ansible-role-ssh-keys.yml.
     - name: Set up user ssh keys.
