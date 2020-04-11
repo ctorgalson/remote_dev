@@ -16,10 +16,16 @@
       import_role:
         name: "ansible-role-apt"
 
+    # Vars in group_vars/all/ansible-role-pip.yml.
+
     # Vars in group_vars/all/ansible-users.yml.
     - name: Set up required users.
       import_role:
         name: "ansible-users"
+
+    # Vars in group_vars/all/ansible-role-vim.yml.
+
+    # Vars in group_vars/all/ansible-nerdfonts.yml.
 
     # Vars in group_vars/all/ansible-role-oh-my-zsh.yml.
 
@@ -47,3 +53,15 @@
     - name: Set up system firewall.
       import_role:
         name: "ansible-role-firewall"
+
+    # Vars in group_vars/all/ansible-role-php.yml.
+
+    # Vars in group_vars/all/ansible-role-composer.yml.
+
+    # Vars in group_vars/all/ansible-role-nodejs.yml.
+
+    # Vars in group_vars/all/ansible-role-yarn.yml.
+
+    # Vars in group_vars/all/ansible-role-nvm.yml.
+
+    # Vars in group_vars/all/ansible-role-docker.yml.
