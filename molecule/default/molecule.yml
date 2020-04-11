@@ -3,8 +3,6 @@ dependency:
   name: galaxy
 lint: |
   ./scripts/lint.sh
-env:
-  ANSIBLE_COLLECTIONS_PATHS: "~/.ansible/collections"
 driver:
   name: docker
 platforms:
@@ -17,6 +15,8 @@ provisioner:
   inventory:
     links:
       group_vars: ../group_vars
+  env:
+    ANSIBLE_COLLECTIONS_PATHS: "~/.ansible/collections"
 verifier:
   name: testinfra
   directory: ../../tests/default
