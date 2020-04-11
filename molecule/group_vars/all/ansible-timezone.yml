@@ -1,0 +1,4 @@
+---
+# ansible-timezone (yatesr.timezone) vars.
+
+timezone: "Europe/Paris"

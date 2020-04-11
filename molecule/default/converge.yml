@@ -11,7 +11,10 @@
       import_role:
         name: "ansible-environment"
 
-    # Time zone.
+    # Vars in group_vars/all/ansible-timezone.yml.
+    - name: Set system time zone.
+      import_role:
+        name: "ansible-timezone"
 
     # Vars in group_vars/all/ansible-role-apt.yml.
     - name: Install required apt packages.
