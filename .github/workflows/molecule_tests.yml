@@ -8,6 +8,11 @@ jobs:
       matrix:
         python-version: [3.7]
 
+    env:
+      COLLECTION_PATH: /home/runner/.ansible/collections/ansible_collections
+      COLLECTION_NAMESPACE: ctorgalson
+      COLLECTION_NAME: remote_dev
+
     steps:
       - name: Checkout project repo.
         uses: actions/checkout@v1
@@ -29,9 +34,9 @@ jobs:
 
       - name: Reorganize file system in preparation for test-running.
         run: |
-          mkdir -p ~/.ansible/collections/ansible_collections/ctorgalson/remote_dev
-          cp -r ./ ~/.ansible/collections/ansible_collections/ctorgalson/remote_dev
+          mkdir -p "$COLLECTION_PATH/$COLLECTION_NAMESPACE/$COLLECTION_NAME"
+          cp -r ./ "$COLLECTION_PATH/$COLLECTION_NAMESPACE/$COLLECTION_NAME"
 
       - name: Test!
         run: |
-          molecule --debug test
+          molecule test
