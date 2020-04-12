@@ -1,0 +1,6 @@
+---
+# ansible-environment (weareinteractive.environment) vars.
+
+environment_config:
+  # Useful for non-ascii characters in prompts and for e.g. vim-devicons.
+  LC_ALL: "en_US.UTF-8"

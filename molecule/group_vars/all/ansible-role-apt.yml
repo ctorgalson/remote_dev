@@ -1,12 +1,18 @@
 ---
 # ansible-role-apt (ctorgalson.apt) vars.
 
+# Notes:
+#  - In general, we're installing packages here rather than in individual roles
+#    such as ansible-role-oh-my-zsh for visibility.
 apt_packages:
   - name: "byobu"
   - name: "git"
   - name: "htop"
   - name: "httpie"
+  - name: "mosh"
   - name: "neofetch"
   - name: "openssh-server"
+  - name: "silversearcher-ag"
   - name: "unzip"
+  - name: "vim"
   - name: "zsh"

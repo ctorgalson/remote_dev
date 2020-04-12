@@ -1,0 +1,12 @@
+---
+# ansible-role-ssh-keys (ctorgalson.ssh_keys) vars.
+
+# Note: we're using the same key in ssh_ssh_keys and ssh_authorized_keys
+# for testing convenience, not because it particularly makes sense to use
+# a key to access a system that has that same key itself...
+ssh_user: "{{ rdev_user }}"
+ssh_ssh_keys:
+  - src: "{{ playbook_dir }}/../files/keys/id_rsa_{{ rdev_user }}"
+  - src: "{{ playbook_dir }}/../files/keys/id_rsa_{{ rdev_user }}.pub"
+ssh_authorized_keys:
+  - "{{ playbook_dir }}/../files/keys/id_rsa_{{ rdev_user }}.pub"

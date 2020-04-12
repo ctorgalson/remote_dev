@@ -1,0 +1,5 @@
+---
+# ansible-role-php (geerlingguy.php) vars.
+
+php_enable_webserver: false
+php_default_version_debian: "7.2"

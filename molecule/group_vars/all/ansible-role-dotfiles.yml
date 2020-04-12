@@ -1,0 +1,13 @@
+---
+# ansible-role-dotfiles (ctorgalson.dotfiles) vars.
+
+dotfiles_repos:
+  - repo: "https://github.com/ctorgalson/dotfiles.git"
+    owner: "{{ rdev_user }}"
+    group: "{{ rdev_user }}"
+    name: "dotfiles"
+    version: "master"
+    whitelist:
+      - ".gitconfig"
+      - ".gitignore_global"
+      - ".vimrc"

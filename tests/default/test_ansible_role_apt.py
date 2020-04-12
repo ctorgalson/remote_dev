@@ -9,13 +9,6 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
 
-""" Tests ordered by role where possible, tagged with role name otherwise. """
-
-
-""" ctorgalson.ssh_keys tests. """
-
-
-
 """ ansible-role-apt (ctorgalson.apt) tests. """
 
 
@@ -24,9 +17,12 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     'git',
     'htop',
     'httpie',
+    'mosh',
     'neofetch',
     'openssh-server',
+    'silversearcher-ag',
     'unzip',
+    'vim',
     'zsh',
 ])
 def test_packages(host, package):

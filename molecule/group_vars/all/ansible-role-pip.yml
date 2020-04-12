@@ -1,0 +1,13 @@
+---
+# ansible-role-pip (geerlingguy.pip) vars.
+
+pip_package: "python3-pip"
+pip_executable: "pip3"
+pip_install_packages:
+  - "ansible"
+  - "ansible-lint"
+  - "docker"
+  - "flake8"
+  - "molecule"
+  - "testinfra"
+  - "yamllint"

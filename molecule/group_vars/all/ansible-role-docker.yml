@@ -1,0 +1,6 @@
+---
+# ansible-role-docker (ctorgalson.docker) vars.
+
+docker_users:
+  - "{{ rdev_user }}"
+docker_install_compose: true

@@ -1,0 +1,20 @@
+---
+# ansible-role-oh-my-zsh (ctorgalson.oh-my-zsh) vars.
+
+omz_user:
+  name: "{{ rdev_user }}"
+  group: "{{ rdev_user }}"
+  settings: |
+    export PLATFORMSH_CLI_TOKEN={{ rdev_psh_token }}
+    HOME=${HOME:-'/home/ubuntu'}
+    export PATH="$HOME/"'.platformsh/bin':"$PATH"
+    if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi
+omz_zsh_theme: "sunrise"
+omz_plugins:
+  - "git"
+  - "history"
+  - "history-substring-search"
+  - "nvm"
+  - "ssh-agent"
+  - "z"
+omz_zshrc_force: false

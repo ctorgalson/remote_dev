@@ -1,0 +1,11 @@
+---
+# Common vars.
+#
+# Variables whose values are needed in multiple roles.
+
+rdev_user: "molecule"
+rdev_projects_directory: "Projects"
+rdev_http_port: "8080"
+rdev_https_port: "8443"
+rdev_ssh_port: "8022"
+rdev_psh_token: "109876543210"

@@ -1,0 +1,8 @@
+---
+# ansible-role-security (geerlingguy.security) vars.
+
+security_ssh_port: "{{ rdev_ssh_port }}"
+security_sudoers_passwordless:
+  - "{{ rdev_user }}"
+security_autoupdate_enabled: true
+security_fail2ban_enabled: false
