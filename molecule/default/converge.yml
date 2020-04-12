@@ -56,16 +56,6 @@
       import_role:
         name: "ansible-role-files"
 
-    # Vars in group_vars/all/ansible-role-security.yml.
-    - name: Set up basic system security.
-      import_role:
-        name: "ansible-role-security"
-
-    # Vars in group_vars/all/ansible-role-firewall.yml.
-    - name: Set up system firewall.
-      import_role:
-        name: "ansible-role-firewall"
-
     # Vars in group_vars/all/ansible-role-php.yml.
     - name: Set up php for composer/cli use.
       import_role:
@@ -92,3 +82,16 @@
         name: "ansible-role-nvm"
 
     # Vars in group_vars/all/ansible-role-docker.yml.
+    - name: Install and configure Docker.
+      import_role:
+        name: "ansible-role-docker"
+
+    # Vars in group_vars/all/ansible-role-firewall.yml.
+    - name: Set up system firewall.
+      import_role:
+        name: "ansible-role-firewall"
+
+    # Vars in group_vars/all/ansible-role-security.yml.
+    - name: Set up basic system security.
+      import_role:
+        name: "ansible-role-security"
