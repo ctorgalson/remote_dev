@@ -82,6 +82,9 @@
         name: "ansible-role-nodejs"
 
     # Vars in group_vars/all/ansible-role-yarn.yml.
+    - name: Set up Yarn.
+      import_role:
+        name: "ansible-role-yarn"
 
     # Vars in group_vars/all/ansible-role-nvm.yml.
 
