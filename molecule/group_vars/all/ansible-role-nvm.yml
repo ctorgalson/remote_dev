@@ -1,0 +1,8 @@
+---
+# ansible-role-nvm (ctorgalson.nvm) vars.
+
+nvm_user:
+  name: "{{ rdev_user }}"
+nvm_git_update: true
+nvm_rc_file_create: false
+nvm_rc_file_backup: false

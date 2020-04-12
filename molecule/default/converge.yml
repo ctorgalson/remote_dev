@@ -72,20 +72,23 @@
         name: "ansible-role-php"
 
     # Vars in group_vars/all/ansible-role-composer.yml.
-    - name: Set up composer.
+    - name: Install composer.
       import_role:
         name: "ansible-role-composer"
 
     # Vars in group_vars/all/ansible-role-nodejs.yml.
-    - name: Set up nodejs.
+    - name: Install nodejs.
       import_role:
         name: "ansible-role-nodejs"
 
     # Vars in group_vars/all/ansible-role-yarn.yml.
-    - name: Set up Yarn.
+    - name: Install Yarn.
       import_role:
         name: "ansible-role-yarn"
 
     # Vars in group_vars/all/ansible-role-nvm.yml.
+    - name: Install nvm.
+      import_role:
+        name: "ansible-role-nvm"
 
     # Vars in group_vars/all/ansible-role-docker.yml.
