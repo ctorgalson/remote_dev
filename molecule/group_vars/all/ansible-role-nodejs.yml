@@ -1,0 +1,4 @@
+---
+# ansible-role-nodejs (geerlinguy.nodejs) vars.
+
+nodejs_install_npm_user: "{{ rdev_user }}"
