@@ -49,6 +49,3 @@
 [submodule "roles/ansible-role-yarn"]
 	path = roles/ansible-role-yarn
 	url = https://github.com/ocha/ansible-role-yarn
-[submodule "roles/--force"]
-	path = roles/--force
-	url = https://github.com/yatesr/ansible-timezone.git
