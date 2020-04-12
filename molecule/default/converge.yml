@@ -72,6 +72,9 @@
         name: "ansible-role-php"
 
     # Vars in group_vars/all/ansible-role-composer.yml.
+    - name: Set up composer.
+      import_role:
+        name: "ansible-role-composer"
 
     # Vars in group_vars/all/ansible-role-nodejs.yml.
 
