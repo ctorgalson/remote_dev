@@ -67,6 +67,9 @@
         name: "ansible-role-firewall"
 
     # Vars in group_vars/all/ansible-role-php.yml.
+    - name: Set up php for composer/cli use.
+      import_role:
+        name: "ansible-role-php"
 
     # Vars in group_vars/all/ansible-role-composer.yml.
 
