@@ -5,10 +5,22 @@ omz_user:
   name: "{{ rdev_user }}"
   group: "{{ rdev_user }}"
   settings: |
+    # Add platform.sh cli token to rc file.
+
     export PLATFORMSH_CLI_TOKEN={{ rdev_psh_token }}
+
+    # Add the exact snippet that `platform self:install` adds so it won't be
+    # duplicated.
+    #
+    # Todo:
+    #   - Figure out what we can do about the fact that `platform self:update`
+    #     may update this snippet, since this variable will destroy those
+    #     changes if the role runs again.
+
+    # BEGIN SNIPPET: Platform.sh CLI configuration
     HOME=${HOME:-'/home/ubuntu'}
     export PATH="$HOME/"'.platformsh/bin':"$PATH"
-    if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi
+    if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi # END SNIPPET
 omz_zsh_theme: "sunrise"
 omz_plugins:
   - "git"

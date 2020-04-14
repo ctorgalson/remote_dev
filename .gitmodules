@@ -52,3 +52,6 @@
 [submodule "roles/ansible-timezone"]
 	path = roles/ansible-timezone
 	url = https://github.com/yatesr/ansible-timezone.git
+[submodule "roles/ansible-role-platform"]
+	path = roles/ansible-role-platform
+	url = https://github.com/ctorgalson/ansible-role-platform

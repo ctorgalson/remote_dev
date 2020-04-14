@@ -81,6 +81,11 @@
       import_role:
         name: "ansible-role-nvm"
 
+    # Vars in group_vars/all/ansible-role-platform.yml.
+    - name: Set up platformsh-cli tool.
+      import_role:
+        name: "ansible-role-platform"
+
     # Vars in group_vars/all/ansible-role-docker.yml.
     - name: Install and configure Docker.
       import_role:

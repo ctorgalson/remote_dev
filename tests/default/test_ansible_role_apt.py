@@ -14,12 +14,14 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 @pytest.mark.parametrize('package', [
     'byobu',
+    'curl',
     'git',
     'htop',
     'httpie',
     'mosh',
     'neofetch',
     'openssh-server',
+    'pv',
     'silversearcher-ag',
     'unzip',
     'vim',
