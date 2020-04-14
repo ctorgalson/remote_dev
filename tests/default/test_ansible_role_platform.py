@@ -9,7 +9,7 @@ import pytest
 
 
 @pytest.mark.parametrize('contents', [
-    'PLATFORM_CLI_TOKEN',
+    'PLATFORMSH_CLI_TOKEN',
 ])
 def test_platform_config_in_zshrc(host, contents):
     f = host.file('/home/molecule/.zshrc')
