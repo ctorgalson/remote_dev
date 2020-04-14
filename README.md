@@ -16,6 +16,7 @@ are:
 - [`ctorgalson.files` (`ansible-role-files`)](https://galaxy.ansible.com/ctorgalson/files)
 - [`ctorgalson.nvm` (`ansible-role-nvm`)](https://galaxy.ansible.com/ctorgalson/nvm)
 - [`ctorgalson.oh-my-zsh` (`ansible-role-oh-my-zsh`)](https://galaxy.ansible.com/ctorgalson/oh-my-zsh)
+- [`ctorgalson.platform` (`ansible-role-platform`)](https://galaxy.ansible.com/ctorgalson/platform)
 - [`ctorgalson.ssh-keys` (`ansible-role-ssh-keys`)](https://galaxy.ansible.com/ctorgalson/ssh-keys)
 - [`ctorgalson.vim` (`ansible-role-vim`)](https://galaxy.ansible.com/ctorgalson/vim)
 - [`geerlingguy.composer` (`ansible-role-composer`)](https://galaxy.ansible.com/geerlingguy/composer)
