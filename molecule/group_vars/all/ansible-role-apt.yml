@@ -6,12 +6,14 @@
 #    such as ansible-role-oh-my-zsh for visibility.
 apt_packages:
   - name: "byobu"
+  - name: "curl"
   - name: "git"
   - name: "htop"
   - name: "httpie"
   - name: "mosh"
   - name: "neofetch"
   - name: "openssh-server"
+  - name: "pv"
   - name: "silversearcher-ag"
   - name: "unzip"
   - name: "vim"
