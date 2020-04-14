@@ -1,0 +1,6 @@
+---
+# ansible-role-platform (ctorgalson.platform) vars.
+
+psh_user: "{{ rdev_user }}"
+psh_user_shell: "/usr/bin/zsh"
+psh_user_rc_file: "{{ psh_user_home }}/.zshrc"
