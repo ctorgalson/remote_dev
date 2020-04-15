@@ -12,6 +12,7 @@ community. In alphabetical order by namespace/role-name, the collections roles
 are:
 
 - [`ctorgalson.apt` (`ansible-role-apt`)](https://galaxy.ansible.com/ctorgalson/apt)
+- [`ctorgalson.docksal` (`ansible-role-docksal`)](git@github.com:ctorgalson/ansible-role-docksal.git)
 - [`ctorgalson.dotfiles` (`ansible-role-dotfiles`)](https://galaxy.ansible.com/ctorgalson/dotfiles)
 - [`ctorgalson.files` (`ansible-role-files`)](https://galaxy.ansible.com/ctorgalson/files)
 - [`ctorgalson.nvm` (`ansible-role-nvm`)](https://galaxy.ansible.com/ctorgalson/nvm)

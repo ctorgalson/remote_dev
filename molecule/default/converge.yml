@@ -6,97 +6,201 @@
     - ctorgalson.remote_dev
 
   tasks:
+    # Set up bare system configuration and anything not depending on a non-root
+    # user already being present.
+
     # Vars in group_vars/all/ansible-environment.yml.
     - name: Set environment variables.
-      import_role:
+      include_role:
         name: "ansible-environment"
+        apply:
+          tags:
+            - environment
+            - system
 
     # Vars in group_vars/all/ansible-timezone.yml.
     - name: Set system time zone.
-      import_role:
+      include_role:
         name: "ansible-timezone"
+        apply:
+          tags:
+            - system
+            - timezone
 
     # Vars in group_vars/all/ansible-role-apt.yml.
     - name: Install required apt packages.
-      import_role:
+      include_role:
         name: "ansible-role-apt"
+        apply:
+          tags:
+            - apt
+            - packages
+            - system
 
     # Vars in group_vars/all/ansible-role-pip.yml.
     - name: Install required pip packages.
-      import_role:
+      include_role:
         name: "ansible-role-pip"
-
-    # Vars in group_vars/all/ansible-users.yml.
-    - name: Set up required users.
-      import_role:
-        name: "ansible-users"
-
-    # Vars in group_vars/all/ansible-role-oh-my-zsh.yml.
-    - name: Set up zsh and oh-my-zsh for user.
-      import_role:
-        name: "ansible-role-oh-my-zsh"
-
-    # Vars in group_vars/all/ansible-role-vim.yml.
-    - name: Set up Vim and its plugins.
-      import_role:
-        name: "ansible-role-vim"
-
-    # Vars in group_vars/all/ansible-role-ssh-keys.yml.
-    - name: Set up user ssh keys.
-      import_role:
-        name: "ansible-role-ssh-keys"
-
-    # Vars in group_vars/all/ansible-role-dotfiles.yml.
-    - name: Set up dotfiles in user home directory.
-      import_role:
-        name: "ansible-role-dotfiles"
-
-    # Vars in group_vars/all/ansible-role-files.yml.
-    - name: Set up file structure in user home directory.
-      import_role:
-        name: "ansible-role-files"
+        apply:
+          tags:
+            - packages
+            - pip
+            - system
 
     # Vars in group_vars/all/ansible-role-php.yml.
     - name: Set up php for composer/cli use.
-      import_role:
+      include_role:
         name: "ansible-role-php"
+        apply:
+          tags:
+            - composer
+            - php
+            - system
 
     # Vars in group_vars/all/ansible-role-composer.yml.
     - name: Install composer.
-      import_role:
+      include_role:
         name: "ansible-role-composer"
-
-    # Vars in group_vars/all/ansible-role-nodejs.yml.
-    - name: Install nodejs.
-      import_role:
-        name: "ansible-role-nodejs"
-
-    # Vars in group_vars/all/ansible-role-yarn.yml.
-    - name: Install Yarn.
-      import_role:
-        name: "ansible-role-yarn"
-
-    # Vars in group_vars/all/ansible-role-nvm.yml.
-    - name: Install nvm.
-      import_role:
-        name: "ansible-role-nvm"
-
-    # Vars in group_vars/all/ansible-role-platform.yml.
-    - name: Set up platformsh-cli tool.
-      import_role:
-        name: "ansible-role-platform"
-
-    # Vars in group_vars/all/ansible-role-docker.yml.
-    - name: Install and configure Docker.
-      import_role:
-        name: "ansible-role-docker"
+        apply:
+          tags:
+            - composer
+            - packages
+            - php
+            - system
 
     # Vars in group_vars/all/ansible-role-firewall.yml.
     - name: Set up system firewall.
-      import_role:
+      include_role:
         name: "ansible-role-firewall"
+        apply:
+          tags:
+            - security
+            - system
+
+    # Set up users, tools that get installed in user directories, and tools
+    # (like docker) that concern user groups.
+
+    # Vars in group_vars/all/ansible-users.yml.
+    - name: Set up required users.
+      include_role:
+        name: "ansible-users"
+        apply:
+          tags:
+            - users
+
+    # Vars in group_vars/all/ansible-role-oh-my-zsh.yml.
+    - name: Set up zsh and oh-my-zsh for user.
+      include_role:
+        name: "ansible-role-oh-my-zsh"
+        apply:
+          tags:
+            - shell
+            - users
+            - zsh
+
+    # Vars in group_vars/all/ansible-role-dotfiles.yml.
+    - name: Set up dotfiles in user home directory.
+      include_role:
+        name: "ansible-role-dotfiles"
+        apply:
+          tags:
+            - dotfiles
+            - shell
+            - users
+
+    # Vars in group_vars/all/ansible-role-vim.yml.
+    - name: Set up Vim and its plugins.
+      include_role:
+        name: "ansible-role-vim"
+        apply:
+          tags:
+            - shell
+            - users
+            - vim
+
+    # Vars in group_vars/all/ansible-role-ssh-keys.yml.
+    - name: Set up user ssh keys.
+      include_role:
+        name: "ansible-role-ssh-keys"
+        apply:
+          tags:
+            - keys
+            - shell
+            - users
+
+    # Vars in group_vars/all/ansible-role-files.yml.
+    - name: Set up file structure in user home directory.
+      include_role:
+        name: "ansible-role-files"
+        apply:
+          tags:
+            - files
+            - shell
+            - users
+
+    # Vars in group_vars/all/ansible-role-nodejs.yml.
+    - name: Install nodejs.
+      include_role:
+        name: "ansible-role-nodejs"
+        apply:
+          tags:
+            - node
+            - system
+
+    # Vars in group_vars/all/ansible-role-yarn.yml.
+    - name: Install Yarn.
+      include_role:
+        name: "ansible-role-yarn"
+        apply:
+          tags:
+            - node
+            - system
+            - yarn
+
+    # Vars in group_vars/all/ansible-role-nvm.yml.
+    - name: Install nvm.
+      include_role:
+        name: "ansible-role-nvm"
+        apply:
+          tags:
+            - node
+            - nvm
+            - system
+
+    # Vars in group_vars/all/ansible-role-platform.yml.
+    - name: Set up platformsh-cli tool.
+      include_role:
+        name: "ansible-role-platform"
+        apply:
+          tags:
+            - platform
+            - system
 
     # Vars in group_vars/all/ansible-role-security.yml.
     - name: Set up basic system security.
-      import_role:
+      include_role:
         name: "ansible-role-security"
+        apply:
+          tags:
+            - security
+            - system
+            - docker
+
+    # Vars in group_vars/all/ansible-role-docker.yml.
+    - name: Install and configure Docker.
+      include_role:
+        name: "ansible-role-docker"
+        apply:
+          tags:
+            - docker
+            - docksal
+            - system
+
+    # Vars in group_vars/all/ansible-role-docksal.yml.
+    - name: Install and configure Docksal.
+      include_role:
+        name: "ansible-role-docksal"
+        apply:
+          tags:
+            - docksal
+            - system

@@ -55,3 +55,6 @@
 [submodule "roles/ansible-role-platform"]
 	path = roles/ansible-role-platform
 	url = https://github.com/ctorgalson/ansible-role-platform
+[submodule "roles/ansible-role-docksal"]
+	path = roles/ansible-role-docksal
+	url = https://github.com/ctorgalson/ansible-role-docksal
