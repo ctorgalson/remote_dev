@@ -8,6 +8,9 @@ driver:
 platforms:
   - name: instance
     image: geerlingguy/docker-ubuntu1804-ansible:latest
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
     pre_build_image: true
 provisioner:
@@ -15,6 +18,8 @@ provisioner:
   inventory:
     links:
       group_vars: ../group_vars
+    playbooks:
+      prepare: prepare.yml
   env:
     ANSIBLE_COLLECTIONS_PATHS: "~/.ansible/collections"
 verifier:

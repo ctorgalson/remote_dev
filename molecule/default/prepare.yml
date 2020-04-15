@@ -1,0 +1,20 @@
+---
+- name: Prepare
+  hosts: all
+  pre_tasks:
+    - name: Create /etc/docker directory.
+      file:
+        path: "/etc/docker"
+        state: directory
+        owner: root
+        group: root
+
+    - name: Create /etc/docker/daemon.json
+      copy:
+        content: |
+          {
+            "storage-driver": "vfs"
+          }
+        dest: "/etc/docker/daemon.json"
+        owner: root
+        group: root
