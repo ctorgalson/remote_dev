@@ -16,6 +16,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     'byobu',
     'curl',
     'git',
+    'git-extras',
     'htop',
     'httpie',
     'mosh',

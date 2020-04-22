@@ -8,6 +8,7 @@ apt_packages:
   - name: "byobu"
   - name: "curl"
   - name: "git"
+  - name: "git-extras"
   - name: "htop"
   - name: "httpie"
   - name: "mosh"
