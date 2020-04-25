@@ -1,0 +1,14 @@
+---
+# ansible-volume (anarcher.volume) vars.
+
+# Note: this role can't be conveniently tested in Molecule, and we don't want
+# to provide potentially risky /dev paths as defaults. The commented-out vars
+# are plausible.
+
+volumes: []
+# volumes:
+#   - path: "/var/remote_dev"
+#     dev: "/dev/sda1"
+#     fstype: "ext4"
+#     fsopts: "defaults,noatime,nobootwait"
+#     state: "mounted"
