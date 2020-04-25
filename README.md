@@ -7,10 +7,11 @@ An Ansible collection designed for setting up remote web-dev workstations.
 ## Roles
 
 The collection adds numerous roles as submodules. Where possible, I've used my
-own, but I've included a number of excellent roles by members of the Ansible
-community. In alphabetical order by namespace/role-name, the collections roles
+own, but more than half are excellent roles by members of the Ansible
+community. In alphabetical order by namespace/role-name, the collection's roles
 are:
 
+- [`anarcher.volume` (`ansible-volume`)](https://galaxy.ansible.com/anarcher/volume)
 - [`ctorgalson.apt` (`ansible-role-apt`)](https://galaxy.ansible.com/ctorgalson/apt)
 - [`ctorgalson.docksal` (`ansible-role-docksal`)](git@github.com:ctorgalson/ansible-role-docksal.git)
 - [`ctorgalson.dotfiles` (`ansible-role-dotfiles`)](https://galaxy.ansible.com/ctorgalson/dotfiles)
