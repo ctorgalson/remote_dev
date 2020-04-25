@@ -17,9 +17,9 @@ provisioner:
   name: ansible
   inventory:
     links:
-      group_vars: ../group_vars
+      group_vars: ../../playbooks/group_vars
     playbooks:
-      converge: ../../playbooks/default_demo.yml
+      converge: converge.yml
       prepare: prepare.yml
   env:
     ANSIBLE_COLLECTIONS_PATHS: "~/.ansible/collections"
