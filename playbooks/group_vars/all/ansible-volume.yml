@@ -10,5 +10,5 @@ volumes: []
 #   - path: "/var/remote_dev"
 #     dev: "/dev/sda1"
 #     fstype: "ext4"
-#     fsopts: "defaults,noatime,nobootwait"
+#     fsopts: "defaults,noatime"
 #     state: "mounted"
