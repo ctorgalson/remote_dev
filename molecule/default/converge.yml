@@ -27,6 +27,15 @@
             - system
             - timezone
 
+    # Vars in group_vars/all/ansible-volume.yml.
+    - name: Create and mount filesystem.
+      include_role:
+        name: "ansible-volume"
+        apply:
+          tags:
+            - system
+            - volumes
+
     # Vars in group_vars/all/ansible-role-apt.yml.
     - name: Install required apt packages.
       include_role:

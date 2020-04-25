@@ -58,3 +58,6 @@
 [submodule "roles/ansible-role-docksal"]
 	path = roles/ansible-role-docksal
 	url = https://github.com/ctorgalson/ansible-role-docksal
+[submodule "roles/ansible-volume"]
+	path = roles/ansible-volume
+	url = https://github.com/anarcher/ansible-volume.git
