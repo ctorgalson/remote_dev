@@ -13,7 +13,7 @@ are:
 
 - [`anarcher.volume` (`ansible-volume`)](https://galaxy.ansible.com/anarcher/volume)
 - [`ctorgalson.apt` (`ansible-role-apt`)](https://galaxy.ansible.com/ctorgalson/apt)
-- [`ctorgalson.docksal` (`ansible-role-docksal`)](git@github.com:ctorgalson/ansible-role-docksal.git)
+- [`ctorgalson.docksal` (`ansible-role-docksal`)](https://galaxy.ansible.com/ctorgalson/docksal)
 - [`ctorgalson.dotfiles` (`ansible-role-dotfiles`)](https://galaxy.ansible.com/ctorgalson/dotfiles)
 - [`ctorgalson.files` (`ansible-role-files`)](https://galaxy.ansible.com/ctorgalson/files)
 - [`ctorgalson.nvm` (`ansible-role-nvm`)](https://galaxy.ansible.com/ctorgalson/nvm)
