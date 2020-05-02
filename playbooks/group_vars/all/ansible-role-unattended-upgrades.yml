@@ -1,0 +1,8 @@
+---
+# ansible-role-unattended-upgrades (jnv.unattended-upgrades) vars.
+
+unattended_origins_patterns:
+  - 'origin=Ubuntu,archive=${distro_codename}-security,label=Ubuntu'
+  - 'origin=Ubuntu,archive=${distro_codename},label=Ubuntu'
+unattended_automatic_reboot: true
+unattended_automatic_reboot_time: "02:30"

@@ -36,6 +36,16 @@
             - system
             - volumes
 
+    # Vars in group_vars/all/ansible-role-unattended-upgrades.yml.
+    - name: Configure unattended upgrades.
+      include_role:
+        name: "ansible-role-unattended-upgrades"
+        apply:
+          tags:
+            - packages
+            - system
+            - unattended-upgrades
+
     # Vars in group_vars/all/ansible-role-apt.yml.
     - name: Install required apt packages.
       include_role:
@@ -45,6 +55,10 @@
             - apt
             - packages
             - system
+      tags:
+        # Both this role and ansible-role-unattended-upgrades update the apt
+        # cache. This flunks Molecule's idempotence testing.
+        - molecule-idempotence-notest
 
     # Vars in group_vars/all/ansible-role-pip.yml.
     - name: Install required pip packages.
