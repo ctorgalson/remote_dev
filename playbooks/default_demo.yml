@@ -1,5 +1,5 @@
 ---
-- name: Converge
+- name: Provision docksal/mosh/sshuttle/vim scenario (converge).
   hosts: all
 
   collections:
@@ -15,23 +15,15 @@
         name: "ansible-environment"
       tags:
         - environment
-        - system
+        - systemwide
 
     # Vars in group_vars/all/ansible-timezone.yml.
     - name: Set system time zone.
       import_role:
         name: "ansible-timezone"
       tags:
-        - system
         - timezone
-
-    # Vars in group_vars/all/ansible-volume.yml.
-    - name: Create and mount filesystem.
-      import_role:
-        name: "ansible-volume"
-      tags:
-        - system
-        - volumes
+        - systemwide
 
     # Vars in group_vars/all/ansible-role-unattended-upgrades.yml.
     - name: Configure unattended upgrades.
@@ -39,8 +31,8 @@
         name: "ansible-role-unattended-upgrades"
       tags:
         - packages
-        - system
         - unattended-upgrades
+        - systemwide
 
     # Vars in group_vars/all/ansible-role-apt.yml.
     - name: Install required apt packages.
@@ -52,7 +44,7 @@
         # cache. This flunks Molecule's idempotence testing.
         - molecule-idempotence-notest
         - packages
-        - system
+        - systemwide
 
     # Vars in group_vars/all/ansible-role-pip.yml.
     - name: Install required pip packages.
@@ -61,7 +53,7 @@
       tags:
         - packages
         - pip
-        - system
+        - systemwide
 
     # Vars in group_vars/all/ansible-role-php.yml.
     - name: Set up php for composer/cli use.
@@ -70,7 +62,7 @@
       tags:
         - composer
         - php
-        - system
+        - systemwide
 
     # Vars in group_vars/all/ansible-role-composer.yml.
     - name: Install composer.
@@ -80,7 +72,7 @@
         - composer
         - packages
         - php
-        - system
+        - systemwide
 
     # Vars in group_vars/all/ansible-role-firewall.yml.
     - name: Set up system firewall.
@@ -88,7 +80,7 @@
         name: "ansible-role-firewall"
       tags:
         - security
-        - system
+        - systemwide
 
     # Set up users, tools that get installed in user directories, and tools
     # (like docker) that concern user groups.
@@ -98,6 +90,32 @@
       import_role:
         name: "ansible-users"
       tags:
+        - users
+
+    # Vars in group_vars/all/ansible-role-ssh-keys.yml.
+    - name: Set up user ssh keys.
+      import_role:
+        name: "ansible-role-ssh-keys"
+      tags:
+        - keys
+        - shell
+        - users
+
+    # Vars in group_vars/all/ansible-volume.yml.
+    - name: Create and mount filesystem.
+      import_role:
+        name: "ansible-volume"
+      tags:
+        - users
+        - volumes
+
+    # Vars in group_vars/all/ansible-role-files.yml.
+    - name: Set up file structure in user home directory.
+      import_role:
+        name: "ansible-role-files"
+      tags:
+        - files
+        - shell
         - users
 
     # Vars in group_vars/all/ansible-role-oh-my-zsh.yml.
@@ -127,39 +145,20 @@
         - users
         - vim
 
-    # Vars in group_vars/all/ansible-role-ssh-keys.yml.
-    - name: Set up user ssh keys.
-      import_role:
-        name: "ansible-role-ssh-keys"
-      tags:
-        - keys
-        - shell
-        - users
-
-    # Vars in group_vars/all/ansible-role-files.yml.
-    - name: Set up file structure in user home directory.
-      import_role:
-        name: "ansible-role-files"
-      tags:
-        - files
-        - shell
-        - users
-
     # Vars in group_vars/all/ansible-role-nodejs.yml.
     - name: Install nodejs.
       import_role:
         name: "ansible-role-nodejs"
       tags:
         - node
-        - system
+        - npm
 
     # Vars in group_vars/all/ansible-role-yarn.yml.
     - name: Install Yarn.
       import_role:
         name: "ansible-role-yarn"
       tags:
-        - node
-        - system
+        - npm
         - yarn
 
     # Vars in group_vars/all/ansible-role-nvm.yml.
@@ -167,9 +166,8 @@
       import_role:
         name: "ansible-role-nvm"
       tags:
-        - node
+        - npm
         - nvm
-        - system
 
     # Vars in group_vars/all/ansible-role-platform.yml.
     - name: Set up platformsh-cli tool.
@@ -177,7 +175,6 @@
         name: "ansible-role-platform"
       tags:
         - platform
-        - system
 
     # Vars in group_vars/all/ansible-role-security.yml.
     - name: Set up basic system security.
@@ -185,8 +182,7 @@
         name: "ansible-role-security"
       tags:
         - security
-        - system
-        - docker
+        - users
 
     # Vars in group_vars/all/ansible-role-docker.yml.
     - name: Install and configure Docker.
@@ -195,7 +191,6 @@
       tags:
         - docker
         - docksal
-        - system
 
     # Vars in group_vars/all/ansible-role-docksal.yml.
     - name: Install and configure Docksal.
@@ -203,4 +198,16 @@
         name: "ansible-role-docksal"
       tags:
         - docksal
-        - system
+
+    # Vars in group_vars/all/main.yml.
+    - name: Write rdev.sh server connection script.
+      template:
+        src: "{{ rdev_con_script_src }}"
+        dest: "{{ rdev_con_script_dest }}"
+        mode: "a+x"
+      delegate_to: localhost
+      become: false
+      tags:
+        - localhost
+        - script
+      when: "rdev_con_script_dest is defined"
