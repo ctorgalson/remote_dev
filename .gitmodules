@@ -61,3 +61,6 @@
 [submodule "roles/ansible-volume"]
 	path = roles/ansible-volume
 	url = https://github.com/anarcher/ansible-volume.git
+[submodule "roles/ansible-role-unattended-upgrades"]
+	path = roles/ansible-role-unattended-upgrades
+	url = https://github.com/jnv/ansible-role-unattended-upgrades

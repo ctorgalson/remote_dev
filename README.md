@@ -28,6 +28,7 @@ are:
 - [`geerlingguy.php` (`ansible-role-php`)](https://galaxy.ansible.com/geerlingguy/php)
 - [`geerlingguy.pip` (`ansible-role-pip`)](https://galaxy.ansible.com/geerlingguy/pip)
 - [`geerlingguy.security` (`ansible-role-security`)](https://galaxy.ansible.com/geerlingguy/security)
+- [`jnv.unattended-upgrades` (`ansible-role-unattended-upgrades`)](https://galaxy.ansible.com/jnv/unattended-upgrades)
 - [`ocha.yarn` (`ansible-role-yarn`)](https://galaxy.ansible.com/ocha/yarn)
 - [`weareinteractive.environment` (`ansible-environment`)](https://galaxy.ansible.com/weareinteractive/environment) 
 - [`weareinteractive.users` (`ansible-users`)](https://galaxy.ansible.com/weareinteractive/users) 
