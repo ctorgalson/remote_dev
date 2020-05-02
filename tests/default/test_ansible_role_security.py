@@ -34,11 +34,11 @@ def test_sudoers(host, user):
 
 
 @pytest.mark.parametrize('service,port', [
-    ('ssh', '8022'),
+    ('ssh', '22'),
 ])
 def test_services(host, service, port):
     s = host.service(service)
-    o = host.socket('tcp://8022')
+    o = host.socket('tcp://{}'.format(port))
 
     assert s.is_enabled
     assert s.is_running
