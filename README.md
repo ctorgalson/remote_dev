@@ -27,7 +27,10 @@ both `ssh` and `mosh` with the right credentials and connection information.
 
 ## Using the collection
 
-- [Install the collection](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html#id2),
+- [Install the collection](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html#id2)
+  **Note**: pending the resolution of [Issue 16: Galaxy WTF](https://github.com/ctorgalson/remote_dev/issues/16),
+            it is _not_ possible to use the `ansible-galaxy` command to install
+            this collection--it will have to be installed manually.
 - Create a new Ansible project including an [inventory file](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html),
 - Copy the playbook for the scenario that most closely matches your use case
   from the collection's `playbooks/` directory into your project,
