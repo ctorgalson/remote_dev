@@ -21,7 +21,7 @@ provisioner:
     links:
       group_vars: ../../playbooks/group_vars
     playbooks:
-      # cleanup: cleanup.yml
+      cleanup: cleanup.yml
       converge: converge.yml
       prepare: prepare.yml
   env:
