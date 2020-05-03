@@ -1,9 +1,10 @@
 ---
 - name: Cleanup
   hosts: all
+  gather_facts: false
   pre_tasks:
     - name: Remote auto-generated rdev.sh script.
       file:
-        path: "{{ rdev_con_script_dest }}"
+        path: "{{ playbook_dir }}/rdev.sh"
         state: absent
       delegate_to: localhost
