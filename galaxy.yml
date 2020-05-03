@@ -9,7 +9,7 @@ namespace: ctorgalson
 name: remote_dev
 
 # The version of the collection. Must be compatible with semantic versioning
-version: 1.0.0
+version: 1.0.0-alpha2
 
 # The path to the Markdown (.md) readme file. This path is relative to the root of the collection
 readme: README.md
@@ -43,13 +43,13 @@ tags:
 dependencies: {}
 
 # The URL of the originating SCM repository
-repository: http://github.com/ctorgalson/ansible-collection-remote_dev
+repository: http://github.com/ctorgalson/remote_dev
 
 # The URL to any online docs
-documentation: http://github.com/ctorgalson/ansible-collection-remote_dev/README.md
+documentation: http://github.com/ctorgalson/remote_dev/README.md
 
 # The URL to the homepage of the collection/project
-homepage: http://github.com/ctorgalson/ansible-collection-remote_dev
+homepage: http://github.com/ctorgalson/remote_dev
 
 # The URL to the collection issue tracker
-issues: http://github.com/ctorgalson/ansible-collection-remote_dev/issues
+issues: http://github.com/ctorgalson/remote_dev/issues
