@@ -13,9 +13,8 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 @pytest.mark.parametrize('service_or_port', [
-    8022,
-    8080,
-    8443,
+    22,
+    60033,
 ])
 def test_open_ports(host, service_or_port):
     r = host.iptables.rules()

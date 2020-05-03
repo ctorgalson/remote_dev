@@ -1,15 +1,66 @@
-![Molecule Test](https://github.com/ctorgalson/remote_dev/workflows/Molecule%20Test/badge.svg)
-
 # Ansible Collection - ctorgalson.remote_dev
 
-An Ansible collection designed for setting up remote web-dev workstations.
+![Molecule Test](https://github.com/ctorgalson/remote_dev/workflows/Molecule%20Test/badge.svg)
+
+An [Ansible collection](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html)
+designed for setting up remote web-dev workstations.
+
+## Scenarios
+
+### Docksal/mosh/sshuttle/vim
+
+At present, the collection demonstrates one scenario: configuring a remote
+development server based on my current day-to-day development needs, configured
+as follows:
+
+  - [Docksal](https://docksal.io/) as a development LAMP environment,
+  - [mosh](https://mosh.org/) for stable roaming ssh connection,
+  - [sshuttle](https://github.com/sshuttle/sshuttle) for tunneling over
+    ssh to the the LAMP services.
+  - [vim](https://github.com/vim/vim): for editing code directly on the remote server.
+
+The default server configuration is fully firewalled execpt for a port for
+`ssh`, and a port for `mosh`.
+
+When run, the scenario's playbook will create a connection script that starts
+both `ssh` and `mosh` with the right credentials and connection information.
+
+## Using the collection
+
+- [Install the collection](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html#id2),
+- Create a new Ansible project including an [inventory file](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html),
+- Copy the playbook for the scenario that most closely matches your use case
+  from the collection's `playbooks/` directory into your project,
+- Copy the `playbooks/group_vars/` files for the scenario matching the playbook
+  into your projects' `group_vars/all/` directory,
+- Customize the tasks in the playbook to suit your use case,
+- Customize the variables files in `group_vars/all/` to suit your use case,
+- Run the playbooks to provision your server,
+- Connect to your newly-provisioned server with the auto-generated connection
+  script.
+
+This will look approximately like this:
+
+```
+ansible-galaxy collection install ctorgalson.rdev
+mkdir ~/myproject
+cd ~/myproject
+touch hosts.yml
+# (Customize hosts.yml inventory file)
+copy -R ~/.ansible/collections/ansible_collections/ctorgalson/remote_dev/playbooks/demo__docksal_mosh_sshuttle_vim.yml provision.yml .
+mkdir -p group_vars/all
+cp -R ~/.ansible/collections/ansible_collections/ctorgalson/remote_dev/playbooks/group_vars/docksal_mosh_sshuttle_vim/* ./group_vars/all/
+# (Customize playbook)
+# (Customize group_vars/all/*.yml)
+ansible-playbook -i inventory.yml provision.yml
+./redev.sh
+```
 
 ## Roles
 
-The collection adds numerous roles as submodules. Where possible, I've used my
-own, but more than half are excellent roles by members of the Ansible
-community. In alphabetical order by namespace/role-name, the collection's roles
-are:
+The collection uses numerous roles as submodules. Where possible, I've used my
+own, but most of them are widely-used roles published in the Ansible community.
+In alphabetical order by namespace/role-name, the collection's roles are:
 
 - [`anarcher.volume` (`ansible-volume`)](https://galaxy.ansible.com/anarcher/volume)
 - [`ctorgalson.apt` (`ansible-role-apt`)](https://galaxy.ansible.com/ctorgalson/apt)

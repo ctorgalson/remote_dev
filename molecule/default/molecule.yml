@@ -13,12 +13,15 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
     pre_build_image: true
+    groups:
+      - docksal_mosh_sshuttle_vim
 provisioner:
   name: ansible
   inventory:
     links:
       group_vars: ../../playbooks/group_vars
     playbooks:
+      cleanup: cleanup.yml
       converge: converge.yml
       prepare: prepare.yml
   env:
