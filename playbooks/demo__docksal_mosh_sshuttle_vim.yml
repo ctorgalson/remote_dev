@@ -44,14 +44,24 @@
         - unattended-upgrades
         - systemwide
 
+    # Vars in group_vars/all/ansible-role-clamav.yml.
+    - name: Install, configure, and start clamav.
+      import_role:
+        name: "ansible-role-clamav"
+      tags:
+        - clamav
+        - molecule-idempotence-notest
+        - security
+        - systemwide
+
     # Vars in group_vars/all/ansible-role-apt.yml.
     - name: Install required apt packages.
       import_role:
         name: "ansible-role-apt"
       tags:
         - apt
-        # Both this role and ansible-role-unattended-upgrades update the apt
-        # cache. This flunks Molecule's idempotence testing.
+        # This role, ansible-role-unattended-upgrades, and geerlingguy.clamav
+        # update the apt cache. This flunks Molecule's idempotence testing.
         - molecule-idempotence-notest
         - packages
         - systemwide

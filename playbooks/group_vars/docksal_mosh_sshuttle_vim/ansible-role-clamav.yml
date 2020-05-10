@@ -1,0 +1,8 @@
+---
+# ansible-role-clamav (geerlingguy.clamav) vars.
+
+# These are default values.
+clamav_daemon_state: started
+clamav_daemon_enabled: true
+clamav_freshclam_daemon_state: started
+clamav_freshclam_daemon_enabled: true
