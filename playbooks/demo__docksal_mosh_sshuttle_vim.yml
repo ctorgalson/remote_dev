@@ -9,6 +9,16 @@
     # Set up bare system configuration and anything not depending on a non-root
     # user already being present.
 
+    # Vars in group_vars/all/hostname.yml.
+    - name: Set hostname.
+      import_role:
+        name: "hostname"
+      tags:
+        - environment
+        - hostname
+        - molecule-notest
+        - systemwide
+
     # Vars in group_vars/all/ansible-environment.yml.
     - name: Set environment variables.
       import_role:
