@@ -67,3 +67,6 @@
 [submodule "roles/ansible-role-clamav"]
 	path = roles/ansible-role-clamav
 	url = https://github.com/geerlingguy/ansible-role-clamav.git
+[submodule "hostname"]
+	path = roles/hostname
+	url = https://github.com/oasis-roles/hostname.git
