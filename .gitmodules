@@ -64,9 +64,6 @@
 [submodule "roles/ansible-role-unattended-upgrades"]
 	path = roles/ansible-role-unattended-upgrades
 	url = https://github.com/jnv/ansible-role-unattended-upgrades
-[submodule "roles/hostname"]
-	path = roles/hostname
-	url = https://github.com/ANXS/hostname.git
 [submodule "roles/ansible-role-clamav"]
 	path = roles/ansible-role-clamav
 	url = https://github.com/geerlingguy/ansible-role-clamav.git
