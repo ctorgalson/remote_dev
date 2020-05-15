@@ -14,6 +14,9 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 @pytest.mark.parametrize('service_or_port', [
     22,
+    80,
+    123,
+    443,
     60033,
 ])
 def test_open_ports(host, service_or_port):
