@@ -75,6 +75,7 @@ In alphabetical order by namespace/role-name, the collection's roles are:
 - [`ctorgalson.platform` (`ansible-role-platform`)](https://galaxy.ansible.com/ctorgalson/platform)
 - [`ctorgalson.ssh-keys` (`ansible-role-ssh-keys`)](https://galaxy.ansible.com/ctorgalson/ssh-keys)
 - [`ctorgalson.vim` (`ansible-role-vim`)](https://galaxy.ansible.com/ctorgalson/vim)
+- [`geerlingguy.clamav` (`ansible-role-clamav`)](https://galaxy.ansible.com/geerlingguy/clamav)
 - [`geerlingguy.composer` (`ansible-role-composer`)](https://galaxy.ansible.com/geerlingguy/composer)
 - [`geerlingguy.docker` (`ansible-role-docker`)](https://galaxy.ansible.com/geerlingguy/docker)
 - [`geerlingguy.firewall` (`ansible-role-firewall`)](https://galaxy.ansible.com/geerlingguy/firewall)

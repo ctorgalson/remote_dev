@@ -11,6 +11,7 @@ apt_packages:
   - name: "git-extras"
   - name: "htop"
   - name: "httpie"
+  - name: "lynis"
   - name: "mosh"
   - name: "neofetch"
   - name: "openssh-server"
