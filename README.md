@@ -66,7 +66,6 @@ own, but most of them are widely-used roles published in the Ansible community.
 In alphabetical order by namespace/role-name, the collection's roles are:
 
 - [`anarcher.volume` (`ansible-volume`)](https://galaxy.ansible.com/anarcher/volume)
-- [`anxs.hostname` (`hostname`)](https://github.com/ANXS/hostname.git)
 - [`ctorgalson.apt` (`ansible-role-apt`)](https://galaxy.ansible.com/ctorgalson/apt)
 - [`ctorgalson.docksal` (`ansible-role-docksal`)](https://galaxy.ansible.com/ctorgalson/docksal)
 - [`ctorgalson.dotfiles` (`ansible-role-dotfiles`)](https://galaxy.ansible.com/ctorgalson/dotfiles)
