@@ -5,8 +5,10 @@
 
 rdev_user: "molecule"
 rdev_projects_directory: "Projects"
-rdev_ssh_port: "22"
+rdev_http_port: "80"
+rdev_https_port: "443"
 rdev_mosh_port: "60033"
+rdev_ssh_port: "22"
 rdev_psh_token: "109876543210"
 rdev_con_script_src: "{{ playbook_dir }}/templates/rdev.sh.j2"
 rdev_con_script_dest: "{{ playbook_dir }}/rdev.sh"
