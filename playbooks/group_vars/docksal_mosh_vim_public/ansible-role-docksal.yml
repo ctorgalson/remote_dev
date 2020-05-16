@@ -3,8 +3,29 @@
 
 docksal_user: "{{ rdev_user }}"
 docksal_global_config:
+  - key: "APACHE_BASIC_AUTH_USER"
+    value: "{{ rdev_docksal_user }}"
+    secret: true
+  - key: "APACHE_BASIC_AUTH_PASS"
+    value: "{{ rdev_docksal_pass }}"
+    secret: true
+  - key: "DOCKSAL_DNS_DOMAIN"
+    value: "{{ rdev_domain }}"
   - key: "DOCKSAL_VHOST_PROXY_IP"
     value: "0.0.0.0"
+  - key: "DOCKSAL_VHOST_PROXY_PORT_HTTP"
+    value: "{{ rdev_http_port }}"
+  - key: "DOCKSAL_VHOST_PROXY_PORT_HTTPS"
+    value: "{{ rdev_https_port }}"
+  - key: "NGINX_BASIC_AUTH_USER"
+    value: "{{ rdev_docksal_user }}"
+    secret: true
+  - key: "NGINX_BASIC_AUTH_PASS"
+    value: "{{ rdev_docksal_pass }}"
+    secret: true
   - key: "SECRET_PLATFORMSH_CLI_TOKEN"
     value: "{{ rdev_psh_token }}"
     secret: true
+
+
+  # Update these, and probably the role itself too.
