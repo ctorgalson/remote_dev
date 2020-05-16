@@ -9,5 +9,7 @@ clamav_freshclam_daemon_enabled: true
 clamav_daemon_configuration_changes:
   # At least in the context of Molecule, the default 30s value is too short
   # and causes test failures.
-  - regexp: "^ReceiveTimeout"
-    line: "ReceiveTimeout 120"
+  - regexp: '^.*Example$'
+    state: absent
+  - regexp: '^.*LocalSocket .*$'
+    line: 'LocalSocket {{ clamav_daemon_localsocket }}'
