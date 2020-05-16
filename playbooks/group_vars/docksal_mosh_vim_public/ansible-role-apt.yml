@@ -9,7 +9,7 @@ apt_packages:
   - name: "curl"
   - name: "git"
   - name: "git-extras"
-  - name: "htop"
+  - name: "glances"
   - name: "httpie"
   - name: "lynis"
   - name: "mosh"
