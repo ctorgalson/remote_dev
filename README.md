@@ -7,7 +7,7 @@ designed for setting up remote web-dev workstations.
 
 ## Scenarios
 
-### Docksal/mosh/sshuttle/vim
+### Docksal/mosh/vim/public
 
 At present, the collection demonstrates one scenario: configuring a remote
 development server based on my current day-to-day development needs, configured
@@ -15,15 +15,21 @@ as follows:
 
   - [Docksal](https://docksal.io/) as a development LAMP environment,
   - [mosh](https://mosh.org/) for stable roaming ssh connection,
-  - [sshuttle](https://github.com/sshuttle/sshuttle) for tunneling over
-    ssh to the the LAMP services.
-  - [vim](https://github.com/vim/vim): for editing code directly on the remote server.
+  - [vim](https://github.com/vim/vim): for editing code directly on the remote server,
+  - [clamav](https://www.clamav.net): for automated antivirus scanning,
+  - [iptables](https://www.netfilter.org/projects/iptables/index.html): for firewalling the server,
+  - [glances](https://nicolargo.github.io/glances): for a nice, command-line system monitor.
 
-The default server configuration is fully firewalled execpt for a port for
-`ssh`, and a port for `mosh`.
+The default server configuration is fully firewalled execpt for ports for:
+
+  - `http`,
+  - `https`,
+  - `mosh`,
+  - `ntp`,
+  - `ssh`.
 
 When run, the scenario's playbook will create a connection script that starts
-both `ssh` and `mosh` with the right credentials and connection information.
+one of `ssh` or `mosh` with the right credentials and connection information.
 
 ## Using the collection
 
@@ -50,9 +56,9 @@ mkdir ~/myproject
 cd ~/myproject
 touch hosts.yml
 # (Customize hosts.yml inventory file)
-copy -R ~/.ansible/collections/ansible_collections/ctorgalson/remote_dev/playbooks/demo__docksal_mosh_sshuttle_vim.yml provision.yml .
+copy -R ~/.ansible/collections/ansible_collections/ctorgalson/remote_dev/playbooks/demo__docksal_mosh_vim_public.yml provision.yml .
 mkdir -p group_vars/all
-cp -R ~/.ansible/collections/ansible_collections/ctorgalson/remote_dev/playbooks/group_vars/docksal_mosh_sshuttle_vim/* ./group_vars/all/
+cp -R ~/.ansible/collections/ansible_collections/ctorgalson/remote_dev/playbooks/group_vars/docksal_mosh_vim_public/* ./group_vars/all/
 # (Customize playbook)
 # (Customize group_vars/all/*.yml)
 ansible-playbook -i inventory.yml provision.yml

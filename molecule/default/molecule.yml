@@ -14,7 +14,7 @@ platforms:
     privileged: true
     pre_build_image: true
     groups:
-      - docksal_mosh_sshuttle_vim
+      - docksal_mosh_vim_public
 provisioner:
   name: ansible
   inventory:

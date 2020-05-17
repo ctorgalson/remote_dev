@@ -2,6 +2,8 @@
 # ansible-role-firewall (geerlingguy.firewall) vars.
 
 firewall_allowed_tcp_ports:
-  - "{{ rdev_ssh_port }}"
+  - "{{ rdev_http_port }}"
+  - "{{ rdev_https_port }}"
   - "{{ rdev_mosh_port }}"
+  - "{{ rdev_ssh_port }}"
 firewall_enable_ipv6: false
