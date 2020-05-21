@@ -2,7 +2,6 @@
 # ansible-role-nerdfonts (ctorgalson.nerdfonts) vars.
 
 nf_user: "{{ ansible_ssh_user }}"
-nf_group: "{{ nf_user }}"
 nf_linux_fonts_dir: "{{ playbook_dir }}/.local/share/fonts/NerdFonts"
 nf_single_fonts:
   - "UbuntuMono/Regular/complete/Ubuntu Mono Nerd Font Complete.ttf"
