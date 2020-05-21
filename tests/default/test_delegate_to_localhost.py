@@ -12,6 +12,8 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 """ Tests for localhost-delegated operations not associated with any role. """
 
 """ Paths should be relative to the playbook directory. """
+
+
 @pytest.mark.parametrize('string', [
     'REMOTE_USER=molecule',
     'REMOTE_IP=172.17.0.3',

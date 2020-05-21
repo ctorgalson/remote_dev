@@ -67,3 +67,6 @@
 [submodule "roles/ansible-role-clamav"]
 	path = roles/ansible-role-clamav
 	url = https://github.com/geerlingguy/ansible-role-clamav.git
+[submodule "roles/ansible-role-nerdfonts"]
+	path = roles/ansible-role-nerdfonts
+	url = https://github.com/ctorgalson/ansible-role-nerdfonts.git
