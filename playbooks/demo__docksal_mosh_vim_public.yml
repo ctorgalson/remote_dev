@@ -221,3 +221,13 @@
         - localhost
         - script
       when: "rdev_con_script_dest is defined"
+
+    # vars in group_vars/all/ansible-role-nerdfonts.yml.
+    - name: Download individual NerdFonts to local system.
+      import_role:
+        name: "ansible-role-nerdfonts"
+      delegate_to: localhost
+      become: false
+      tags:
+        - localhost
+        - fonts

@@ -25,6 +25,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     'openssh-server',
     'pv',
     'silversearcher-ag',
+    'speedtest-cli',
     'unzip',
     'vim',
     'zsh',

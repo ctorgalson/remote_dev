@@ -3,8 +3,15 @@
   hosts: all
   gather_facts: false
   pre_tasks:
-    - name: Remove auto-generated rdev.sh script.
+    - name: Remove auto-generated test artifacts.
       file:
-        path: "{{ playbook_dir }}/rdev.sh"
+        path: "{{ item_path }}"
         state: absent
       delegate_to: localhost
+      loop:
+        # Remove generated connection script.
+        - "{{ playbook_dir }}/rdev.sh"
+        # Remove test directory containing font downloads.
+        - "{{ playbook_dir }}/.local"
+      loop_control:
+        loop_var: item_path

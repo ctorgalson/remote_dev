@@ -17,6 +17,7 @@ apt_packages:
   - name: "openssh-server"
   - name: "pv"
   - name: "silversearcher-ag"
+  - name: "speedtest-cli"
   - name: "unzip"
   - name: "vim"
   - name: "zsh"
