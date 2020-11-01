@@ -53,3 +53,10 @@ homepage: http://github.com/ctorgalson/remote_dev
 
 # The URL to the collection issue tracker
 issues: http://github.com/ctorgalson/remote_dev/issues
+
+build_ignore:
+  - .github
+  - .gitignore
+  - .gitmodules
+  - .venv
+  - virtualenv.sh
