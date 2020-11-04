@@ -51,7 +51,7 @@ one of `ssh` or `mosh` with the right credentials and connection information.
 This will look approximately like this:
 
 ```
-ansible-galaxy collection install ctorgalson.rdev
+ansible-galaxy collection install ctorgalson.remote_dev --pre
 mkdir ~/myproject
 cd ~/myproject
 touch hosts.yml
