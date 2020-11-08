@@ -1,7 +1,14 @@
 ---
 - name: Prepare
   hosts: all
+
   pre_tasks:
+    - name: Install required packages.
+      apt:
+        name:
+          - dirmngr
+        update_cache: true
+
     - name: Create /etc/docker directory.
       file:
         path: "/etc/docker"

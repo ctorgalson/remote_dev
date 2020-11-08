@@ -12,11 +12,11 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 """ ansible-role-composer (geerlingguy.composer) tests. """
 
 
-@pytest.mark.parametrize('package', [
-  'hirak/prestissimo',
+@pytest.mark.parametrize('version', [
+  'Composer version 2',
 ])
-def test_composer_packages(host, package):
-    c = 'composer global show'
+def test_composer_packages(host, version):
+    c = 'composer --version'
     r = host.run(c)
 
-    assert package in r.stdout
+    assert version in r.stdout

@@ -2,4 +2,19 @@
 # ansible-role-php (geerlingguy.php) vars.
 
 php_enable_webserver: false
-php_default_version_debian: "7.2"
+php_default_version_debian: "7.4"
+php_packages:
+  - php-common
+  - php-cli
+  - php{{ php_default_version_debian }}-dev
+  - php{{ php_default_version_debian }}-fpm
+  - libpcre3-dev
+  - php{{ php_default_version_debian }}-gd
+  - php{{ php_default_version_debian }}-curl
+  - php{{ php_default_version_debian }}-imap
+  - php{{ php_default_version_debian }}-json
+  - php{{ php_default_version_debian }}-opcache
+  - php{{ php_default_version_debian }}-xml
+  - php{{ php_default_version_debian }}-mbstring
+  - php-sqlite3
+  - php-apcu

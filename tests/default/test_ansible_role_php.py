@@ -13,7 +13,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 @pytest.mark.parametrize('package,version,path', [
-    ('php', 'PHP 7.2', '/usr/bin/php'),
+    ('php', 'PHP 7.4', '/usr/bin/php'),
 ])
 def test_php_package(host, package, version, path):
     v = '{} --version'.format(package)
