@@ -20,11 +20,11 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     (60033, 'tcp'),
 ])
 def test_open_ports(host, port, protocol):
-    r = host.iptables.rules()
+    rules = host.iptables.rules()
 
     if protocol == 'tcp':
-        l = '-A INPUT -p tcp -m tcp --dport {} -j ACCEPT'.format(port)
+        line = '-A INPUT -p tcp -m tcp --dport {} -j ACCEPT'.format(port)
     else:
-        l = '-A INPUT -p udp -m udp --sport {} -j ACCEPT'.format(port)
+        line = '-A INPUT -p udp -m udp --sport {} -j ACCEPT'.format(port)
 
-    assert l in r
+    assert line in rules

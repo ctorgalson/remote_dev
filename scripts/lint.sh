@@ -22,24 +22,13 @@ echo ''
 # Run ansible-lint check.
 echo 'Starting ansible-lint...'
 
-# ansible-lint supposedly works if passed a path, but it really doesn't look as
-# though it does. So for now, lets find all the likely candidate files (yaml
-# files not in roles, or in .venv) and ansible-lint each of them individually.
-#
-# This also means that (for the moment) the .ansible-lint file in the project
-# root is ignored.
-ANSIBLELINT_OUTPUT=$(find . -type f \
-  -name '*.yml' \
-  -not -path './.venv/*' \
-  -not -path './roles/*' \
-  -not -path './playbooks/roles/*' \
-  -exec ansible-lint {} +)
+ANSIBLELINT_OUTPUT=$(ansible-lint .)
 ANSIBLELINT_RETURN="$?"
 
 # Run flake8 check.
 echo 'Starting flake8...'
 
-FLAKE8_OUTPUT=$(flake8 ./plugins/modules/*)
+FLAKE8_OUTPUT=$(flake8 ./tests/*)
 FLAKE8_RETURN="$?"
 
 # Run shellcheck check.
@@ -51,7 +40,12 @@ SHELLCHECK_RETURN="$?"
 # Run yamllint check.
 echo 'Starting yamllint...'
 
-YAMLLINT_OUTPUT=$(yamllint ./)
+YAMLLINT_OUTPUT=$(find . -type f \
+  -name '*.yml' \
+  -not -path './.venv/*' \
+  -not -path './roles/*' \
+  -not -path './playbooks/roles/*' \
+  -exec yamllint --config-file .yamllint {} +)
 YAMLLINT_RETURN="$?"
 
 echo ''
@@ -60,7 +54,7 @@ echo ''
 # Make it easy to output return codes and errors.
 #
 function output_errors {
-  if [ "$2" -ne 0 ]; then
+  if [[ "$2" -ne 0 ]]; then
       echo "The '$1' command failed with return code '$2':"
       echo ''
       echo echo "$3" | awk '{print "\t" $0}'
@@ -81,9 +75,9 @@ function finish {
   # Exit with an overall return code--this will be some nonzero value if any
   # of the individual commands returned a nonzero value.
   exit "$YAMLLINT_RETURN" \
-    || "$ANSIBLE_RETURN" \
     || "$FLAKE8_RETURN" \
-    || "$SHELLCHECK_OUTPUT"
+    || "$SHELLCHECK_OUTPUT" \
+    || "$ANSIBLE_RETURN"
 }
 
 trap finish EXIT

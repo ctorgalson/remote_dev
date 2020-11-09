@@ -1,3 +1,4 @@
 exclude_paths:
-  - ./roles
-  - ./playbooks/roles
+  - .venv
+  - roles
+  - playbooks/roles
