@@ -1,8 +1,8 @@
 ---
 dependency:
   name: galaxy
-lint: |
-  ./scripts/lint.sh
+# lint: |
+#   ./scripts/lint.sh
 driver:
   name: docker
 platforms:
