@@ -1,12 +1,18 @@
 name: Molecule Test
 on: [push]
 jobs:
-  test:
-    runs-on: ubuntu-18.04
+  molecule:
+    runs-on:
+      - ubuntu-18.04
+      - ubuntu-20.04
+      - ubuntu-latest
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.7]
+        python-version:
+          - 3.8
+        scenario:
+          - default
 
     env:
       COLLECTION_PATH: /home/runner/.ansible/collections/ansible_collections
@@ -15,7 +21,7 @@ jobs:
 
     steps:
       - name: Checkout project repo.
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Checkout submodules.
         uses: textbook/git-checkout-submodule-action@master
@@ -37,6 +43,9 @@ jobs:
           mkdir -p "$COLLECTION_PATH/$COLLECTION_NAMESPACE/$COLLECTION_NAME"
           cp -r ./ "$COLLECTION_PATH/$COLLECTION_NAMESPACE/$COLLECTION_NAME"
 
-      - name: Test!
-        run: |
-          molecule test
+      - name: Molecule
+        uses: gofrolist/molecule-action@v2
+        with:
+          molecule_options: --debug
+          molecule_command: test
+          molecule_args: --scenario-name ${{ matrix.scenario }}
