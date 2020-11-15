@@ -32,7 +32,7 @@ jobs:
 
       - name: Debug the environment.
         run: |
-          pwd && ls -hal && whoami && ls -hal ~/.ansible/collections
+          pwd && ls -hal && whoami && ls -halR ~/.ansible/collections
 
       - name: Molecule
         uses: gofrolist/molecule-action@v2
