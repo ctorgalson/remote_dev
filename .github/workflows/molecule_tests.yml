@@ -34,7 +34,7 @@ jobs:
 
       - name: Debug the environment.
         run: |
-          which bash && pwd && ls -hal && whoami && ls -halR ~/.ansible/collections
+          which bash && pwd && ls -hal roles && whoami && ls -halR ~/.ansible/collections
 
       - name: Molecule
         uses: gofrolist/molecule-action@v2
