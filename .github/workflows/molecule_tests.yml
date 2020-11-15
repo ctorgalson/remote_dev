@@ -17,6 +17,7 @@ jobs:
       COLLECTION_PATH: /home/runner/.ansible/collections/ansible_collections
       COLLECTION_NAMESPACE: ctorgalson
       COLLECTION_NAME: remote_dev
+      INPUT_MOLECULE_WORKING_DIR: /home/runner/.ansible/collections/ansible_collections/ctorgalson/remote_dev
 
     steps:
       - name: Checkout project repo.
