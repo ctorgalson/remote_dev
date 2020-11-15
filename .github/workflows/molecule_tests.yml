@@ -25,10 +25,10 @@ jobs:
       - name: Checkout submodules.
         uses: textbook/git-checkout-submodule-action@master
 
-      # - name: Reorganize file system in preparation for test-running.
-      #   run: |
-      #     mkdir -p "$COLLECTION_PATH/$COLLECTION_NAMESPACE/$COLLECTION_NAME"
-      #     cp -r ./ "$COLLECTION_PATH/$COLLECTION_NAMESPACE/$COLLECTION_NAME"
+      - name: Reorganize file system in preparation for test-running.
+        run: |
+          mkdir -p "$COLLECTION_PATH/$COLLECTION_NAMESPACE/$COLLECTION_NAME"
+          cp -r ./ "$COLLECTION_PATH/$COLLECTION_NAMESPACE/$COLLECTION_NAME"
 
       - name: Debug the environment.
         run: |
