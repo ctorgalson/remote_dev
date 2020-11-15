@@ -39,6 +39,6 @@ jobs:
         uses: gofrolist/molecule-action@v2
         with:
           molecule_working_dir: .
-          # molecule_options: --debug
+          molecule_options: --debug
           molecule_command: test
           molecule_args: --scenario-name ${{ matrix.scenario }}
