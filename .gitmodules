@@ -46,9 +46,6 @@
 [submodule "roles/ansible-environment"]
 	path = roles/ansible-environment
 	url = https://github.com/weareinteractive/ansible-environment
-[submodule "roles/ansible-role-yarn"]
-	path = roles/ansible-role-yarn
-	url = https://github.com/ocha/ansible-role-yarn
 [submodule "roles/ansible-timezone"]
 	path = roles/ansible-timezone
 	url = https://github.com/yatesr/ansible-timezone.git
@@ -73,3 +70,6 @@
 [submodule "roles/ansible-rclone"]
 	path = roles/ansible-rclone
 	url = https://github.com/stefangweichinger/ansible-rclone.git
+[submodule "roles/ansible-yarn"]
+	path = roles/ansible-yarn
+	url = git@github.com:oefenweb/ansible-yarn
