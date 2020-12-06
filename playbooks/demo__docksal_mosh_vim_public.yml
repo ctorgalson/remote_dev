@@ -163,10 +163,10 @@
         - node
         - npm
 
-    # Vars in group_vars/all/ansible-role-yarn.yml.
+    # Vars in group_vars/all/ansible-yarn.yml.
     - name: Install Yarn.
       import_role:
-        name: "ansible-role-yarn"
+        name: "ansible-yarn"
       tags:
         - npm
         - yarn
