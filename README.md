@@ -91,7 +91,7 @@ In alphabetical order by namespace/role-name, the collection's roles are:
 - [`geerlingguy.pip` (`ansible-role-pip`)](https://galaxy.ansible.com/geerlingguy/pip)
 - [`geerlingguy.security` (`ansible-role-security`)](https://galaxy.ansible.com/geerlingguy/security)
 - [`jnv.unattended-upgrades` (`ansible-role-unattended-upgrades`)](https://galaxy.ansible.com/jnv/unattended-upgrades)
-- [`ocha.yarn` (`ansible-role-yarn`)](https://galaxy.ansible.com/ocha/yarn)
+- [`oefenweb.yarn` (`ansible-yarn`)](https://galaxy.ansible.com/oefenweb/ansible-yarn)
 - [`weareinteractive.environment` (`ansible-environment`)](https://galaxy.ansible.com/weareinteractive/environment) 
 - [`weareinteractive.users` (`ansible-users`)](https://galaxy.ansible.com/weareinteractive/users) 
 - [`yatesr.timezone` (`ansible-timezone`)](https://galaxy.ansible.com/yatesr/timezone)
